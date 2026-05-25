@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kubeview
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://code.benco.io/kubeview/deploy/helm
+    chart: kubeview
+    targetRevision: v2.0.6
+    helm:
+      releaseName: kubeview
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kubeview
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
