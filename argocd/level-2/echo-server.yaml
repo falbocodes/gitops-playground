@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: echo-server
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/falbocodes/gitops-playground
+    targetRevision: HEAD
+    path: argocd/level-2/manifests
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: echo-server
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
