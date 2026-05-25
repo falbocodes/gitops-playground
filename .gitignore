@@ -1,0 +1,17 @@
+# Terraform
+.terraform/
+**/.terraform/
+**/.terraform.lock.hcl
+**/terraform.tfstate
+**/terraform.tfstate.backup
+terraform/kubeconfig
+
+# Helm cache
+terraform/.helm/cache/
+
+# kind leftovers
+gitops-playground-config
+*-config
+
+# local tooling
+.claude/
