@@ -231,3 +231,13 @@ terraform destroy
 
 This removes the kind cluster and all its containers. The local `terraform.tfstate` file will remain.
 
+## Contributing
+
+Contributions are welcome! To propose a change:
+
+1. Fork the repository and create a branch following the naming convention: `<type>/<short-description>` (e.g. `feature/add-level-5`, `fix/kubeconfig-output`)
+2. Make your changes and commit using [Conventional Commits](https://www.conventionalcommits.org/) (e.g. `feat(argocd): add level-5 app`)
+3. Open a pull request against `main` with a clear description of what the change does and why
+
+Please keep PRs focused — one logical change per PR makes review faster and merges cleaner.
+
